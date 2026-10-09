@@ -1,0 +1,71 @@
+{
+  "upstream_repository": "https://github.com/Mbed-TLS/mbedtls",
+  "upstream_commit": "0fe989b6b514192783c469039edd325fd0989806",
+  "upstream_tag": "mbedtls-4.1.0",
+  "upstream_tag_object": "cb84dd3b7807c178c6a3c93c4693405e1d6d353d",
+  "official_archive_url": "https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-4.1.0/mbedtls-4.1.0.tar.bz2",
+  "official_archive_sha256": "377a09cf8eb81b5fb2707045e5522d5489d3309fed5006c9874e60558fc81d10",
+  "purpose": "ESP FRP host TLS/PSA 4.1.0 完整发布来源；只清理 Actions 来源，保留31官方生成文件与发布 GEN_FILES OFF 合同",
+  "source_owner": "darren-space",
+  "source_issue": "https://github.com/darren-you/darren-space/issues/64",
+  "source_dependencies": [
+    {
+      "path": "tf-psa-crypto",
+      "repository": "https://github.com/darren-you/reference-host-tf-psa-crypto.git",
+      "commit": "5e126977abd4cf617f48efa578c397d52b7333ca",
+      "upstream_repository": "https://github.com/Mbed-TLS/TF-PSA-Crypto",
+      "upstream_commit": "29160dd877d29658279fd683b2ae57b320ddcf09"
+    }
+  ],
+  "generation_commands": [
+    "python framework/scripts/make_generated_files.py",
+    "cd tf-psa-crypto && python framework/scripts/make_generated_files.py",
+    "bash scripts/prepare_release.sh"
+  ],
+  "generation_requirements": "tools/source-archive-requirements.txt",
+  "generated_file_sha256": {
+    "library/error.c": "0e93918964c61c1a6ae241bdaf61acc3c102f5ebeab8917a2464cc6e700bd1d6",
+    "library/mbedtls_config_check_before.h": "c18eabbd03332b93755203b31590ea6259bccf705f467f4154d18eed628356de",
+    "library/mbedtls_config_check_final.h": "865f9a832a42ab549e5b78eb7fd61159cc0562883f0f9033ec89b6cee6cd33ab",
+    "library/mbedtls_config_check_user.h": "b2db1d4631b8cdafef387c5d7abf7f68816f0be930e3229d5fe9ca44097fd321",
+    "library/ssl_debug_helpers_generated.c": "ff6f9712f06d920c450f2e6d27676e77488ddc56f3a4a9adf6ec5f5244f55664",
+    "library/version_features.c": "7aeaf9fc8d9537a007380bef169b06cef42bf44a60b624f6e796939117466dd1",
+    "programs/test/query_config.c": "37a1eff50db67b9293f056255cec0fb97d61c51ccc93e9aef33bdf434d28d04a",
+    "tests/include/test/test_certs.h": "3ee791fb539ede87a9e25a265ef87370af2f8af419181b34180280394ef56d4c",
+    "tests/include/test/test_keys.h": "62703c5b66f4bbdb8a2a5301a7734f60df77dbd2194468711f3591b3e2fa7c09",
+    "tests/opt-testcases/handshake-generated.sh": "f96a638951333abe382af476855c6b4f54b3ca8653af4974b9e92e60d2519dff",
+    "tests/opt-testcases/tls13-compat.sh": "539d170d1da671cd06a69a8cbcaff3bd8bc3c53c432c4685502d36032a8c5395",
+    "tests/suites/test_suite_config.mbedtls_boolean.data": "5d054331f36d685c77f6e68e4d99281eb33ac766962a6518b26f6d642cc2d136",
+    "tf-psa-crypto/core/psa_crypto_driver_wrappers.h": "6672ffb641805c65598400c105449123a52a4609b96550685dbdda95a631ae41",
+    "tf-psa-crypto/core/psa_crypto_driver_wrappers_no_static.c": "92d1d9001187cb5fdcac77d15963758e225f45d6d4f0022afe9c5ff849051008",
+    "tf-psa-crypto/core/tf_psa_crypto_config_check_before.h": "dbab90223d99c55497fc63d02f260c68314014a0c3a0567ef062f0dd50206234",
+    "tf-psa-crypto/core/tf_psa_crypto_config_check_final.h": "b270dc954a270a37c842de1be7d1c2f49b0f1a1061ef6e9ae8f079dbbfe0c01f",
+    "tf-psa-crypto/core/tf_psa_crypto_config_check_user.h": "5a8a00652c1dd63936c5cd1bd633276c16f499e128b6a8cc2f6ddb151e7a757a",
+    "tf-psa-crypto/programs/psa/psa_constant_names_generated.c": "ac058804ec18a1bae486f1ad3ae98be47e5b84f2dc254f88b3160b4e2c53ed28",
+    "tf-psa-crypto/tests/include/test/test_keys.h": "62703c5b66f4bbdb8a2a5301a7734f60df77dbd2194468711f3591b3e2fa7c09",
+    "tf-psa-crypto/tests/suites/test_suite_bignum.generated.data": "995da35213f78b6d1c67b95be868ed5f646222121fce5da60f6410ca5acc8d9e",
+    "tf-psa-crypto/tests/suites/test_suite_bignum_core.generated.data": "b7f2de4361b3cbc1cd9fe76c5d05c432094e9b8c7eef3bb2c5e2c56d0f547dab",
+    "tf-psa-crypto/tests/suites/test_suite_bignum_mod.generated.data": "a4df5cccb2afc0c2ca7d261d2a905fb6737171caca9f0197c98fd82af119945c",
+    "tf-psa-crypto/tests/suites/test_suite_bignum_mod_raw.generated.data": "71b1a8c0a9338453c72e11e117e611b4aa0fd0fe97961f55c1b61d3fbfc79d84",
+    "tf-psa-crypto/tests/suites/test_suite_config.psa_boolean.data": "93a7027826e6e1c0127fa122959be21e23cf5b8c92de3b8f1fec16615d1141b4",
+    "tf-psa-crypto/tests/suites/test_suite_ecp.generated.data": "a70643797265c8d5dcd519f65bd0f58b82c242101bc5dabb92bc8ce6f3a84302",
+    "tf-psa-crypto/tests/suites/test_suite_psa_crypto_generate_key.generated.data": "08ea1ba8b26c1ec32e1d8c5b79c98d064ff69ed616068c1305a7cff8cbcea858",
+    "tf-psa-crypto/tests/suites/test_suite_psa_crypto_low_hash.generated.data": "be6059c65d71ea2e5557ff35261567a70bf153e76b87317c54907ee88befc78e",
+    "tf-psa-crypto/tests/suites/test_suite_psa_crypto_not_supported.generated.data": "40b4e6e76be688a4f433254da6e160cfb7bbdb70574dabd8622d69461023ec7a",
+    "tf-psa-crypto/tests/suites/test_suite_psa_crypto_op_fail.generated.data": "4d1aa61fc796c4b25f2672dfb288d342b048e7d4a3c52976d37e9ef65516d883",
+    "tf-psa-crypto/tests/suites/test_suite_psa_crypto_storage_format.current.data": "fa49c24e0a49d2ece2fbbf1088bffbeba3736d1ce73a754c8f0fca83b4d9f6e1",
+    "tf-psa-crypto/tests/suites/test_suite_psa_crypto_storage_format.v0.data": "fbc90faa56b3dc9efa73168ccaf00608f83e8666481ab2e06819b5024769e6f7"
+  },
+  "comment_differences": {
+    "library/error.c": "官方生成器注释尾空格按官方发布包移除，程序代码不变",
+    "tests/include/test/test_certs.h": "注释中的构建机绝对路径归位为 framework/data_files，证书/密钥字节与宏值不变"
+  },
+  "archive_command": "python3 tools/package_source_archive.py --output /new/path/mbedtls-4.1.0-actions-exit.tar.bz2",
+  "official_equivalence": {
+    "git_source_files": 3869,
+    "generated_files": 31,
+    "missing_files": 0,
+    "tls_psa_noncomment_differences": 0,
+    "claim": "受控归档不是官方包的逐字节副本；差异为Actions删除、受控gitlinks/出处/打包入口及记录的生成注释"
+  }
+}
