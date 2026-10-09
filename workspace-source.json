@@ -5,14 +5,14 @@
   "upstream_tag_object": "cb84dd3b7807c178c6a3c93c4693405e1d6d353d",
   "official_archive_url": "https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-4.1.0/mbedtls-4.1.0.tar.bz2",
   "official_archive_sha256": "377a09cf8eb81b5fb2707045e5522d5489d3309fed5006c9874e60558fc81d10",
-  "purpose": "ESP FRP host TLS/PSA 4.1.0 完整发布来源；只清理 Actions 来源，保留31官方生成文件与发布 GEN_FILES OFF 合同",
+  "purpose": "ESP FRP Host TLS/PSA 完整受控发布来源：Mbed TLS 4.1.0 与 TF-PSA-Crypto 1.1.0；退出 Actions，保留31官方生成文件与发布 GEN_FILES OFF 合同，并采用 TFPSA 子工程不在源码目录生成文档配置的正式 CMake 修正",
   "source_owner": "darren-space",
   "source_issue": "https://github.com/darren-you/darren-space/issues/64",
   "source_dependencies": [
     {
       "path": "tf-psa-crypto",
       "repository": "https://github.com/darren-you/reference-host-tf-psa-crypto.git",
-      "commit": "5e126977abd4cf617f48efa578c397d52b7333ca",
+      "commit": "e9014b46d32b0a152a4e451e65e0a7af89939f75",
       "upstream_repository": "https://github.com/Mbed-TLS/TF-PSA-Crypto",
       "upstream_commit": "29160dd877d29658279fd683b2ae57b320ddcf09"
     }
@@ -60,12 +60,12 @@
     "library/error.c": "官方生成器注释尾空格按官方发布包移除，程序代码不变",
     "tests/include/test/test_certs.h": "注释中的构建机绝对路径归位为 framework/data_files，证书/密钥字节与宏值不变"
   },
-  "archive_command": "python3 tools/package_source_archive.py --output /new/path/mbedtls-4.1.0-actions-exit.tar.bz2",
+  "archive_command": "python3 tools/package_source_archive.py --output \"/new/path/mbedtls-4.1.0-actions-exit-$(git rev-parse HEAD).tar.bz2\"",
   "official_equivalence": {
     "git_source_files": 3869,
     "generated_files": 31,
     "missing_files": 0,
     "tls_psa_noncomment_differences": 0,
-    "claim": "受控归档不是官方包的逐字节副本；差异为Actions删除、受控gitlinks/出处/打包入口及记录的生成注释"
+    "claim": "受控归档不是官方包的逐字节副本；差异为 Actions 删除、受控 gitlinks/出处/打包入口、记录的生成注释，以及 TFPSA 子工程文档配置的 CMake 接线。TLS/PSA 运行 C、头文件与汇编源码不变。git_source_files/generated_files/missing_files 记录初始官方 Git 导出与官方 4.1.0 发布包的比较，不表示当前受控归档的总文件数。"
   }
 }
